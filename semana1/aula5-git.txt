@@ -1,0 +1,16 @@
+git commit -m master
+git commit -m master
+
+git checkout -b bugFix
+
+git checkout -b bugFix
+git commit -m bugFix
+git checkout master
+git commit -m master
+git merge bugFix
+
+git checkout -b bugFix
+git checkout master
+git commit -m master
+git checkout bugFix
+git rebase master
