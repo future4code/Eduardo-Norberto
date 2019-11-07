@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=McLaren|Roboto&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: hsla(165, 81%, 93%, .3);
+    color: rgba(0, 0, 0, 1);
+    font-family: Arial, sans-serif;
+}
+div{
+    width: 1200px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    margin: 20px auto 20px auto;
+    padding: 10px;
+}
+div#principal{
+    height: 80px;
+}
+div#corpo{
+    height: auto;
+}
+header#cabecalho h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30pt;
+    color: #888888;
+    padding: 0px;
+    margin-top: 0px;
+}
+header#cabecalho h3{
+    font-family: 'McLaren', cursive;
+    font-size: 15pt;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+    padding: 0px;
+    margin-bottom: 0px;
+}
+nav#barra-nav {
+    display: in;
+}
+nav#barra-nav ul {
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 40px;
+    left: 580px;
+}
+nav#barra-nav li {
+    display: inline;
+    background-color: #dddddd;
+    padding: 20px;
+    transition: background-color 1s;
+}
+nav#barra-nav li:hover {
+    background-color: #606060;
+}
+nav#barra-nav a {
+    color: black;
+    text-decoration: none;
+}
+nav#barra-nav a:hover {
+    color: red;
+}
+table {
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer{
+    text-align: center;
+}
