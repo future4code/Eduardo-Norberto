@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 /** 
   *
   *  ESTILOS GERAIS 
@@ -54,14 +55,13 @@ div img {
 }
 
 .container {
-    height: 500px;
+    height: 350px;
     text-align: center;
 }
 
 .icone {
     height: 15px;
 }
-
 
 /** 
   *
@@ -72,6 +72,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding-top: 100px;
 }
 
 #container-de-descricao>ol {
@@ -105,6 +106,7 @@ table {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 td button {
@@ -115,8 +117,12 @@ td button {
     color: black;
 }
 
-td button:hover {
-    background-color: #c4ad31;
+button:hover {
+    background-color: #ffaf11;
+}
+button:active{
+    background-color: #ffffff;
+    color: black;
 }
 
 .container-do-search {
@@ -140,6 +146,7 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin-top: 100px;
 }
 
 #back-button:hover {
@@ -147,4 +154,26 @@ td button:hover {
 }
 a{
     text-decoration: none;
+}
+td img{
+    width: 56px;
+    height: 56px;
+}
+img{
+    width: 56px;
+    height: 30px;
+}
+div input{
+    border: 0 none;
+    outline: 0;
+    border-bottom: solid black 1.5px;
+}
+h2 h3 p li td{
+    font-family: 'Roboto', sans-serif;
+}
+li{
+    list-style-position: inside;
+}
+button:focus{
+    outline: none;
 }
