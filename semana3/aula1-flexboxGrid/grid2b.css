@@ -1,0 +1,65 @@
+div {
+        border: 1px solid black;
+        text-align: center;
+        
+    }
+    
+    .container {
+        width: 1200px;
+        max-height: 915px;
+        background-color: #ffffff;
+        display: grid;
+        grid-template-rows: 1fr 10fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 2fr 2fr;
+        grid-template-areas: "heade menu1 menu1 munu1"
+                             "content1 content1 content1 content1"
+                             "content1 content1 content1 content1"
+                             "content2 vazio imag extr"
+                             "footer footer footer footer"
+    }
+
+    #header {
+        background-color: #2ECC40;
+        height: 50px;
+        grid-area: heade;
+    }
+    
+    #menu {
+        background-color: #FFDC00;
+        height: 50px;
+        grid-area: menu1;
+    }
+    
+    #content1 {
+        background-color: #F012BE;
+        height: auto;
+        grid-area: content1;
+    }
+    
+    #content2 {
+        background-color:#0074D9;
+        width: 600px;
+        height: 200px;
+        grid-area: content2;
+        
+    }
+    #vazio{
+        width: 297px;
+        height: 200px;
+        grid-area: vazio;
+    }
+    #image {
+        background-color: #FF4136;
+        grid-area: imag;
+    }
+    #extra {
+        background-color: #01FF70;;
+        grid-area: extr;
+        
+    }
+    #footer {
+        background-color: #B10DC9;
+        width: 1200px;
+        height: 50px;
+        grid-area: footer;
+    }
