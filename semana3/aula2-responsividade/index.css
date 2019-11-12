@@ -1,0 +1,198 @@
+
+div{
+    border: 1px solid black;
+}
+#main-container{
+    background-color: white;
+    display: grid;
+    width: 800px;
+    height: 900px;
+    grid-template-rows: 2fr 3fr 3fr 3fr 3fr 3fr;
+    grid-gap: 10px;
+    grid-template-areas: "hd hd hd"
+                          "um dois tres"
+                           "quatro cinco seis"
+                           "sete . oito"
+                           "sete . oito"
+                           "nove dez onze";
+}
+#header{
+    background-color: red;
+    grid-area: hd;
+}
+#item1{
+    background-color: blue;
+    grid-area: um;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item2{
+    background-color: yellow;
+    grid-area: dois;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item3{
+    background-color: green;
+    grid-area: tres;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item4{
+    background-color: blue;
+    grid-area: quatro;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item5{
+    background-color: yellow;
+    grid-area: cinco;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item6{
+    background-color: green;
+    grid-area: seis;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item7{
+    background-color: black;
+    color: white;
+    grid-area: sete;
+    width: 150%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item8{
+    background-color:black;
+    color: white;
+    grid-area: oito;
+    width: 150%;
+    justify-self: end;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item9{
+    background-color: white;
+    grid-area: nove;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item10{
+    background-color: white;
+    grid-area: dez;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#item11{
+    background-color: white;
+    grid-area: onze;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+@media screen and (max-width: 700px){
+    #main-container{
+        display: grid;
+        width: 750px;
+        height: 900px;
+        grid-template-rows: 2fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr;
+        grid-gap: 10px;
+        grid-template-areas: "hd hd hd"
+                            "um . dois "
+                            "tres tres tres"
+                           "quatro . cinco "
+                           "seis seis seis"
+                           "sete . oito"
+                           "sete . oito"
+                           "nove . dez" 
+                           "onze onze onze";
+    }
+    #item1{
+        width: 150%;
+
+    }
+    #item2{
+        width: 150%;
+        justify-self: end;
+    }
+    #item4{
+        width: 150%;
+
+    }
+    #item5{
+        width: 150%;
+        justify-self: end;
+    }
+    #item9{
+        width: 150%;
+    }
+    #item10{
+        width: 150%;
+        justify-self: end;
+    }
+}
+@media screen and (max-width: 500px){
+    #main-container{
+        display: flex;
+        flex-direction: column;
+    }
+    #header{
+        height: 40px;
+    }
+    #item1{
+        height: 40px;
+        width: 100%;
+    }
+    #item2{
+        height: 40px;
+        width: 100%;
+    }
+    #item3{
+        height: 40px;
+        width: 100%;
+    }
+    #item4{
+        height: 40px;
+        width: 100%;
+    }
+    #item5{
+        height: 40px;
+        width: 100%;
+    }
+    #item6{
+        height: 40px;
+        width: 100%;
+    }
+    #item7{
+        height: 40px;
+        width: 100%;
+    }
+    #item8{
+        height: 40px;
+        width: 100%;
+    }
+    #item9{
+        height: 40px;
+        width: 100%;
+    }
+    #item10{
+        height: 40px;
+        width: 100%;
+    }
+    #item11{
+        height: 40px;
+        width: 100%;
+    }
+}
