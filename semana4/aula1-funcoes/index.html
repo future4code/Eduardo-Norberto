@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planner</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <header>
+        <label>Tarefa:</label>
+        <input type="text" name="novaTarefa">
+        <select name="diaSemana" id="diaSemana">
+            <option value="segunda">Segunda-Feira</option>
+            <option value="terca">Terça-Feira</option>
+            <option value="quarta">Quarta-Feira</option>
+            <option value="quinta">Quinta-Feira</option>
+            <option value="sexta">Sexta-Feira</option>
+            <option value="sabado">Sabado</option>
+            <option value="domingo">Domingo</option>
+        </select>
+        <button onclick="addTarefa()">Nova Tarefa!</button>
+    </header>
+    <div id="main-container">
+        <section class="dia" id="seg">
+            Segunda-Feira
+            <ul class="lista"></ul>
+        </section>
+        <section class="dia" id="ter">
+            Terça-Feira
+            <ul class="lista"></ul>
+        </section>
+        <section class="dia" id="qua">
+            Quarta-Feira
+            <ul class="lista"></ul>
+        </section>
+        <section class="dia" id="qui">
+            Quinta-Feira
+            <ul class="lista"></ul>
+        </section>
+        <section class="dia" id="sex">
+            Sexta-Feira
+            <ul class="lista"></ul>
+        </section>
+        <section class="dia" id="sab">
+            Sabado
+            <ul class="lista"></ul>
+        </section>
+        <section class="dia" id="dom">
+            Domingo
+            <ul class="lista"></ul>
+        </section>
+    </div>
+</body>
+</html>
