@@ -1,0 +1,19 @@
+#container-form{
+    border: 2px dotted black;
+    padding: 10px;
+    width: 40%;
+}
+h2{
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+#container-cadastro{
+    display: grid;
+    row-gap: 5px;
+    width: 40%;
+}
+.inscritos{
+    border: 2px dotted black;
+    padding: 10px;
+    width: 40%;
+}
