@@ -18,11 +18,19 @@ function aoSalvar(){
     let containerArticle = document.getElementById("article-container")
     containerArticle.innerHTML = ""
     for(let postagem of arrayPost){
-        containerArticle.innerHTML += "<h3>" + postagem.titulo + "</h3>"
+        containerArticle.innerHTML += "<div id='post'>" + "<h3>" + postagem.titulo + "</h3>"
                                         + "<h5>" + postagem.autor + "</h5>"
-                                        + "<p>" + postagem.texto + "</p>"
+                                        + "<p>" + postagem.texto + "</p>" + "</div>"
     } 
-   
+    for (const limpar of arrayPost) {
+        if (limpar === postagem) {
+            arrayPost.splice(arrayPost.indexOf(limpar), 1)
+        }
+    }
 }
 
-
+function limpar(){
+    document.getElementById("titulo").value=''
+    document.getElementById("autor").value=''
+    document.getElementById('texto').value=''
+}

@@ -1,0 +1,40 @@
+body{
+    background: tomato;
+    opacity: 90%;
+}
+#main-container{
+    display: block;
+    margin: 0 auto;
+    border: 2px double black;
+    width: 30%;
+    padding: 10px;
+    font-family: Helvetica, sans-serif;
+    background-color: white;
+}
+#section-container{
+    display: relative;
+    margin: 0 auto;
+    border: 2px double black;
+    width: 30%;  
+    
+}
+#article-container h3{
+    font-family: Helvetica, sans-serif;
+}
+#article-container h3{
+    text-align: center;
+}
+#article-container h5{
+    text-align: right;
+}
+#article-container p{
+    text-align: justify;
+}
+#post{
+    display: block;
+    margin: 0 auto;
+    border: 1px double black;
+    width: 95%;
+    padding: 10px;   
+    background-color: white;
+}

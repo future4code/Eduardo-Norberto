@@ -8,7 +8,7 @@
     <script src="index.js" defer></script>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
-<body onkeydown="onKeyDown(event)"">
+<body onkeydown="onKeyDown(event)">
     <div id="main-container">
         <h3>Criar Post</h3>
         <p>Título do post:</p>
@@ -19,6 +19,7 @@
         <textarea name="post" id="texto" cols="30" rows="10"></textarea>
         <br>
         <button onclick="aoSalvar()">Salvar</button>
+        <button onclick="limpar()">Limpar</button>
     </div>
     <section id="section-container">
         <article id="article-container">
