@@ -8,20 +8,20 @@
     <script src="index.js" defer></script>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
-<body>
+<body onkeydown="onKeyDown(event)"">
     <div id="main-container">
         <h3>Criar Post</h3>
         <p>Título do post:</p>
         <input type="text" id="titulo">
         <p>Autor do Post:</p>
         <input type="text" id="autor">
-        <p>Escreva o Post:</p>
-        <textarea name="post" id="post" cols="30" rows="10"></textarea>
+        <p>Escreva o Texto:</p>
+        <textarea name="post" id="texto" cols="30" rows="10"></textarea>
         <br>
-        <button>Salvar</button>
+        <button onclick="aoSalvar()">Salvar</button>
     </div>
-    <section>
-        <article>
+    <section id="section-container">
+        <article id="article-container">
 
         </article>
     </section>
