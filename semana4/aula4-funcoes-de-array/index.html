@@ -8,7 +8,7 @@
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body onkeydown="onKeyDown(event)">
     <section>
         <div id="container-despesas">
             <h2>Controlador de Despesas</h2>
@@ -22,12 +22,13 @@
                 <option value="transporte">Despesas com Transporte</option>
                 <option value="outro">Outros</option>
             </select></p>
-            <p>Descrição:</p> <textarea  id="Descrição" cols="30" rows="5"></textarea>
-            <p><button onclick="cadastrarDespesas()">Cadastrar Despesas</button></p>
+            <p>Descrição:</p> <textarea  id="descricao" cols="30" rows="5"></textarea>
+            <p></p>
+            <button onclick="cadastrarDespesas()">Cadastrar Despesas</button>
         </div>
-        <div>
+        <div id="container-detalhe">
             <h2>Despesas Detalhadas</h2>
-            <p>Tipo: <select id="seletor-despesa">
+            <p>Tipo: <select id="despesa-seletor">
                 <option value="casa">Despesas de Casa</option>
                 <option value="festa">Despesas de Festa</option>
                 <option value="viagem">Despesas de Viagem</option>
@@ -37,9 +38,25 @@
             </select></p>
                 <p>Valor Mínimo: <input type="number" id="valorMinimo"></p>
                 <p>Valor Máximo: <input type="number" id="valorMaximo"></p>
-                <p><button onclick="filtar()">Filtrar</button>
-                <button onclick="limpar()">Limpar Filtros</button></p>
+                <p></p>
+                <button onclick="filtar()">Filtrar</button>
+                <button onclick="apagarForm()">Limpar Filtros</button>
         </div>
+        <div id="container-extrato">
+            <h2>Extrato</h2>
+            <h5>Valor Total:<span id="totalExtrato"></span></h5>
+        </div>
+    </section>
+    <section>
+        <article id="total-despesa">
+            <h3>Lista de Despesas</h3>
+        </article>
+        <article id="lista-filtro">
+            <h3>Lista de Despesas Filtrada</h3>
+        </article>
+        <article id="extrato-article">
+            <h3>Extrato</h3>
+        </article>
     </section>
 </body>
 </html>

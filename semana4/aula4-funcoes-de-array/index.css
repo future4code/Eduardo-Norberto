@@ -1,9 +1,21 @@
 section{
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 
 }
 div{
-    border: 3px dotted red;
+    border: 3px dashed red;
     padding: 15px;
+    width: 25vw;
+    height: 45vh;
 }
+textarea {
+    resize: none;
+ }
+ article#espacoDesp{
+    padding: 15px;
+    width: 25vw;
+    height: 20vh;
+    border-bottom: 2px double black;
+ }
