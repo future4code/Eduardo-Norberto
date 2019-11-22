@@ -13,9 +13,15 @@ div{
 textarea {
     resize: none;
  }
+
+ h3, h2, p, h5{
+     font-family: Helvetica, sans-serif;
+ }
+ 
  article#espacoDesp{
+    margin-top: 70px;
     padding: 15px;
-    width: 25vw;
+    width: 15vw;
     height: 20vh;
     border-bottom: 2px double black;
  }
