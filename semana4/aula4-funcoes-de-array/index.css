@@ -1,0 +1,9 @@
+section{
+    display: flex;
+    justify-content: space-around;
+
+}
+div{
+    border: 3px dotted red;
+    padding: 15px;
+}

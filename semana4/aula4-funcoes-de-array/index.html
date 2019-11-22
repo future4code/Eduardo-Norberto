@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Controlador de despesas</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section>
+        <div id="container-despesas">
+            <h2>Controlador de Despesas</h2>
+            <h5>Cadastrar Despesa</h5>
+            <p>Valor: <input type="number" id="valorDesp"></p>
+            <p>Tipo: <select id="seletor-despesa">
+                <option value="casa">Despesas de Casa</option>
+                <option value="festa">Despesas de Festa</option>
+                <option value="viagem">Despesas de Viagem</option>
+                <option value="alimentacao">Despesas com Alimentação</option>
+                <option value="transporte">Despesas com Transporte</option>
+                <option value="outro">Outros</option>
+            </select></p>
+            <p>Descrição:</p> <textarea  id="Descrição" cols="30" rows="5"></textarea>
+            <p><button onclick="cadastrarDespesas()">Cadastrar Despesas</button></p>
+        </div>
+        <div>
+            <h2>Despesas Detalhadas</h2>
+            <p>Tipo: <select id="seletor-despesa">
+                <option value="casa">Despesas de Casa</option>
+                <option value="festa">Despesas de Festa</option>
+                <option value="viagem">Despesas de Viagem</option>
+                <option value="alimentacao">Despesas com Alimentação</option>
+                <option value="transporte">Despesas com Transporte</option>
+                <option value="outro">Outros</option>
+            </select></p>
+                <p>Valor Mínimo: <input type="number" id="valorMinimo"></p>
+                <p>Valor Máximo: <input type="number" id="valorMaximo"></p>
+                <p><button onclick="filtar()">Filtrar</button>
+                <button onclick="limpar()">Limpar Filtros</button></p>
+        </div>
+    </section>
+</body>
+</html>
