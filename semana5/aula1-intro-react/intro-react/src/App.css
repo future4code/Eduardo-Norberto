@@ -1,0 +1,103 @@
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: orange;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  text-align: left;
+  color: black;
+}
+.campo-busca{
+  text-align: right;
+  display: block;
+  margin-left: 80%;
+  margin-top: -40px;   
+}
+.botao-busca{
+  text-align: right;
+  display: block;
+  margin-left: 90.4%;
+  margin-top: -22px;  
+}
+.app-footer{
+  width: 100%;
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background-color: orange;
+}
+.corpo{
+  display: flex;
+
+}
+.menu{
+  width: 15%;
+  margin-top: 5%;
+}
+.menu a{
+  background-color: #eeeeee;
+  color: black;
+  display: block;
+  padding: 12px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+}
+.menu a:hover {
+  background-color: #cccccc;
+}
+.main-container{
+  display: grid;
+  width: 70vw;
+  height: 50vh;
+  justify-content: space-between;
+  column-gap: 1%;
+  row-gap: 5%;
+  margin: 7% auto;
+  grid-auto-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1f 1fr;
+  grid-template-areas: "um dois tres quatro"
+                       "cinco seis sete oito";
+}
+.item1{
+  grid-area: um;
+}
+.item2{
+  grid-area: dois;
+}
+.item3{
+  grid-area: tres;
+}
+.item4{
+  grid-area: quatro;
+}
+.item5{
+  grid-area: cinco;
+}
+.item6{
+  grid-area: seis;
+}
+.item7{
+  grid-area: sete;
+}
+.item8{
+  grid-area: oito;
+}
+#el{
+  width: 100%;
+  height: 105%;
+  border: 1px solid green;
+  border-radius: 2%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
