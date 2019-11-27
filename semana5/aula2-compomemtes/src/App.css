@@ -1,0 +1,61 @@
+.foto-perfil {
+  width: 20%;
+  padding: 10px;
+}
+.posicao-item {
+  display: flex;
+}
+.nome {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+.descricao {
+  font-family: Helvetica, sans-serif;
+  text-align: justify;
+  font-size: 15pt;
+  padding: 20px;
+}
+.icon{
+  width: 8%;
+  padding: 10px;
+}
+.icon-local {
+  height: 3%;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+.icon-desc{
+  font-family: Helvetica, sans-serif;
+  font-size: 15pt;
+  padding: 10px;
+}
+.botao-ver{
+  height: 3%;
+  margin-left: 100px;
+  margin-top: 5px;
+}
+.botao-desc{
+  font-family: Helvetica, sans-serif;
+  font-size: 15pt;
+  padding: 10px;
+  margin-top: 3px;
+}
+.botao-facebook{
+  height: 4%;
+  width: 10%;
+  padding: 10px;
+  margin-left: 100px;
+}
+.facebook-desc{
+  font-family: Helvetica, sans-serif;
+  font-size: 15pt;
+  padding: 10px;
+  margin-top: 3px;
+}
+.icon-job{
+  height: 8%;
+  margin-top: 10%;
+}
