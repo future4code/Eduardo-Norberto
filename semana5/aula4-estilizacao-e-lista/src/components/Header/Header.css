@@ -1,0 +1,10 @@
+.Header {
+    background-color: white;
+    height: 8vh;
+    width: 100%;
+    position: block;
+    top: 0;
+    text-align: left;
+    color: black;
+  }
+  

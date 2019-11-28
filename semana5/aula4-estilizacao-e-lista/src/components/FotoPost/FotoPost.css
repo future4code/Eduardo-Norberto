@@ -1,0 +1,12 @@
+article {
+    display: grid;
+    margin: 0 auto;
+    margin-top: 4%;
+	grid-template-rows: 1fr 1fr;
+	border: 1px solid black;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    text-align: start;
+}
+
