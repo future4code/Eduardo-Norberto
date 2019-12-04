@@ -11,6 +11,9 @@ const ListaFormato = styled.ul `
     text-align: left;
 `;
 
+const ListaSelecao = styled.li `
+    padding: 5px;
+`;
 const ItemPendente = styled.li `
     text-decoration: none;
 `;
@@ -86,37 +89,30 @@ class ListaDeTarefa extends React.Component {
                         </select>
                 </div>
                 <Container>
-
-                    {this.state.arrayDeTarefa.filter(descricao => {
+                    <ListaFormato>
+                        
+                        {this.state.arrayDeTarefa.map(descricao =>{
+                            if (!descricao.completa){
+                                return (
+                                    <ItemPendente onClick={() => this.onClickCheckup(descricao.id)}>{descricao.tarefa}{console.log(descricao)}</ItemPendente>
+                                )
+                            }else{
+                                return (
+                                
+                                    <ItemCompleto onClick={() => this.onClickCheckup(descricao.id)}>{descricao.tarefa}{console.log(descricao)}</ItemCompleto>
+                                )
+                        } 
+                    })}
+                     {this.state.arrayDeTarefa.filter(descricao => {
                             if (this.state.filtroDeTarefa === 'pendentes'){
-                                return !descricao.completa;
+                                return descricao.completa
                             }else if (this.state.filtroDeTarefa === 'completas'){
-                                return descricao.completa;
+                                return !descricao.completa
                             }else{
                                 return false;
                             }
-                    })}
-                
-                    {this.state.arrayDeTarefa.map(descricao =>{
-                        if (!descricao.completa){
-                            return (
-                                
-                                <ListaFormato>
-                                    <ItemPendente onClick={() => this.onClickCheckup(descricao.id)}>{descricao.tarefa}{console.log(descricao)}</ItemPendente>
-                                </ListaFormato>
-                                
-                            )
-                        }else{
-                            return (
-                               
-                                <ListaFormato>
-                                    <ItemCompleto onClick={() => this.onClickCheckup(descricao.id)}>{descricao.tarefa}{console.log(descricao)}</ItemCompleto>
-                                </ListaFormato>
-            
-
-                            )
-                        } 
-                    })}
+                            }).map(descricao => <ListaSelecao>{descricao.tarefa}</ListaSelecao>)}
+                     </ListaFormato>
                 </Container>
             </div>
         );
