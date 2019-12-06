@@ -1,0 +1,8 @@
+.container-tarefas{
+    width: 300px;
+    margin: 0 auto;
+}
+.container-tarefas ul{
+    list-style: outside;
+    text-align: left;
+}
