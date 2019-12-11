@@ -1,5 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+import UserDetail from '../UserDetail/UserDetail';
+import styled from 'styled-components';
+
+const ListStyle = styled.li `
+    text-align: left;
+    list-style: none;
+`;
+
+const ButtonDel = styled.button `
+    color: red;
+`;
 
 const baseUrl = "https://us-central1-future4-users.cloudfunctions.net/api";
 
@@ -31,9 +42,9 @@ class UserListElement extends React.Component {
         
         render(){
             return(
-                <li>
-                    {this.props.user.name} <button onClick={this.handleOnClickDelete}>X</button>
-                </li>
+                <ListStyle>
+                     <span onClick={ <UserDetail /> }>{this.props.user.name}</span> <ButtonDel onClick={this.handleOnClickDelete}>X</ButtonDel>
+                </ListStyle>
             )
         }
         
