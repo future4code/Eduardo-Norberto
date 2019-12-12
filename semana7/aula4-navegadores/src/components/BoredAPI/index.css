@@ -1,0 +1,7 @@
+@font-face {
+    font-family: typeWriter;
+    src: url('../font/Kingthings_Trypewriter_2.ttf');
+  }
+h3{
+    font-family: typeWriter;
+  }
