@@ -15,7 +15,6 @@ class CreatePlaylist extends React.Component{
     }
 
     createPlaylistMusic = async () => {
-        
         const data = {
             name: this.state.name
         }
@@ -25,12 +24,16 @@ class CreatePlaylist extends React.Component{
                 auth: 'eduardo'
             }
         }
-
-        await axios.post(
-            `${baseUrl}/playlists/createPlaylist`,
-            data,
-            request
-        );
+        try {
+            await axios.post(
+                `${baseUrl}/playlists/createPlaylist`,
+                data,
+                request
+            );
+        }catch (error) {
+            alert(error.message)
+        }
+        
 
         this.setState({name: ''})
     }

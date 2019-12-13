@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import DeletePlaylist from '../DeletePlaylist'
 
 const baseUrl = 'https://us-central1-spotif4.cloudfunctions.net/api';
 
@@ -39,7 +40,7 @@ class AllPlaylist extends React.Component {
             
                 <h3>Playlists</h3>
                 {this.state.playlistsList.map(playlist => (
-                <ul>{playlist.name}</ul>
+                <DeletePlaylist playlist={playlist} onDeletePlaylist={this.getAllPlaylists} />
                 ))}
             </div>
         )
