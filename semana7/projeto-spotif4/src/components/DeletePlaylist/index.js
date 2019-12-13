@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import PlaylistMusics from '../PlaylistMusics'
+
+const PlaylistLi = styled.li `
+    padding: 10px;
+    font-weight: bold;
+`;
 
 const baseUrl = 'https://us-central1-spotif4.cloudfunctions.net/api';
 
@@ -9,7 +15,8 @@ class DeletePlaylist extends React.Component{
         super(props)
 
         this.state = {
-            detailPlaylist: []
+            detailPlaylist: [],
+            currentPage: 'add'
         }
     }
 
@@ -45,14 +52,26 @@ class DeletePlaylist extends React.Component{
 
     }
 
+    handleChangePage = () => {
+        if (this.state.currentPage === 'add'){
+            this.setState({currentPage: 'normal'})
+        }else {
+        this.setState ({currentPage: 'add'})
+        }
+    }
+
     render(){
         return(
             <div>
-                <li onClick={() => this.getPlaylistMusics()}> {this.props.playlist.name} </li><label>Apagar Playlist: </label><button onClick={this.delPlaylist}>X</button>
+                <PlaylistLi onClick={() => this.getPlaylistMusics()}> {this.props.playlist.name} </PlaylistLi>
+                <label>Apagar Playlist: </label><button onClick={this.delPlaylist}>X</button>
+                <label>Adicionar Música</label><button onClick={this.handleChangePage}>O</button>
+                {this.state.currentPage === 'normal' ? <PlaylistMusics  text={this.props.playlist.id}/> : null}
                 <ul>
                 {this.state.detailPlaylist.map(detail =>(
-                    <li> {detail.artist} - {detail.name}</li> 
+                    <li> {detail.artist} - {detail.name} <audio src={detail.url} controls/></li> 
                 ))}
+                
                 </ul>
             </div>
         )

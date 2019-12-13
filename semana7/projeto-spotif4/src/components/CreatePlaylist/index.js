@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import axios from 'axios';
 import AllPlaylist from '../AllPlaylist'
 
+const DivCreatePlaylist = styled.div `
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 20px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+`;
+
 const baseUrl = 'https://us-central1-spotif4.cloudfunctions.net/api';
 
 class CreatePlaylist extends React.Component{
@@ -44,14 +53,14 @@ class CreatePlaylist extends React.Component{
 
     render() {
         return(
-            <div>
+            <DivCreatePlaylist>
                 <input onChange={this.controlName} 
                 placeholder='Nome da Playlist'
                 value={this.state.name}
                 />
                 <button onClick={this.createPlaylistMusic}>Salvar</button>
                 <AllPlaylist />
-            </div>
+            </DivCreatePlaylist>
         )
     }
 }

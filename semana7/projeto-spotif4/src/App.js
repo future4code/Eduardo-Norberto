@@ -1,10 +1,12 @@
 import React from 'react';
+import './App.css'; 
 import CreatePlaylist from './components/CreatePlaylist'
 
 function App() {
   return (
-    <div>
-      <h2>Oi!?!?</h2>
+    <div className='header'>
+      <h1>Spotif4</h1>
+      <hr />
       <CreatePlaylist />
     </div>
   );

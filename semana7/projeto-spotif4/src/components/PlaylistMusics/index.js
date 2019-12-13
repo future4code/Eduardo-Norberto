@@ -9,13 +9,28 @@ class PlaylistMusics extends React.Component {
         super(props)
 
         this.state = {
-            detailPlaylist: []
+            musics: '',
+            name: '',
+            artist: '',
+            url: ''
         }
     }
 
-    getPlaylistMusics = async () => {
+    addMusicToPlaylist = async () => {
 
-        const url = `${baseUrl}/playlists/getPlaylistMusics/${this.props.playlist.id}`
+        console.log(this.props.text)
+
+        const url = `${baseUrl}/playlists/addMusicToPlaylist`
+        
+        const data = {
+            playlistId: this.props.text,
+            music: {
+                name: this.state.name,
+                artist: this.state.artist,
+                url: this.state.url
+            }
+            
+        }
 
         const request = {
             headers: {
@@ -23,17 +38,37 @@ class PlaylistMusics extends React.Component {
             }
         }
 
-        const response = await axios.get(url, request)
+        await axios.put(url, data, request)
+        this.setState ({musics: data})
+        console.log(data)
+    }
 
-        this.setState ({detailPlaylist: response.data.result.musics})
+    controlName = event => {
+        this.setState ({name: event.target.value})
+    }
 
+    controlArtist = event => {
+        this.setState ({artist: event.target.value})
+    }
+
+    controlUrl = event => {
+        this.setState ({url: event.target.value})
     }
 
     render() {
         return(
-            <li onClick={this.getPlaylistMusics}>
-                {this.state.detailPlaylist}
-            </li>
+            <div>
+                <input type="text" placeholder="Nome da música" 
+                value={this.state.name} onChange={this.controlName}
+                />
+                <input type="text" placeholder="Nome do Artista" 
+                value={this.state.artist} onChange={this.controlArtist}
+                />
+                <input type="text" placeholder="Url da música" 
+                value={this.state.url} onChange={this.controlUrl}
+                />
+                <button onClick={this.addMusicToPlaylist}>Salvar</button>
+            </div>
         )
     }
 }

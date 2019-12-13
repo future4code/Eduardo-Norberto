@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import axios from 'axios';
 import DeletePlaylist from '../DeletePlaylist'
 
+const DivAllPlaylist = styled.div `
+    list-style: none;
+    padding: 10px;
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+`;
+
 const baseUrl = 'https://us-central1-spotif4.cloudfunctions.net/api';
 
 class AllPlaylist extends React.Component {
@@ -36,15 +43,16 @@ class AllPlaylist extends React.Component {
 
     render() {
         return(
-            <div>
+            <DivAllPlaylist>
             
                 <h3>Playlists</h3>
+                <h6>Click na playlist!!!</h6>
                 {this.state.playlistsList.map(playlist => (
                 <DeletePlaylist playlist={playlist} onDeletePlaylist={this.getAllPlaylists} />
                 ))}
                 
 
-            </div>
+            </DivAllPlaylist>
         )
     }
 
