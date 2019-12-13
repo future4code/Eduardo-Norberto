@@ -42,6 +42,8 @@ class AllPlaylist extends React.Component {
                 {this.state.playlistsList.map(playlist => (
                 <DeletePlaylist playlist={playlist} onDeletePlaylist={this.getAllPlaylists} />
                 ))}
+                
+
             </div>
         )
     }

@@ -9,7 +9,7 @@ class DeletePlaylist extends React.Component{
         super(props)
 
         this.state = {
-
+            detailPlaylist: []
         }
     }
 
@@ -30,11 +30,31 @@ class DeletePlaylist extends React.Component{
         }
     }
 
+    getPlaylistMusics = async () => {
+
+        const url = `${baseUrl}/playlists/getPlaylistMusics/${this.props.playlist.id}`
+
+        const request = {
+            headers: {
+                auth: 'eduardo'
+            }
+        }
+
+        const response = await axios.get(url, request)
+        this.setState ({detailPlaylist: response.data.result.musics})
+
+    }
+
     render(){
         return(
-            <li>
-                {this.props.playlist.name} <button onClick={this.delPlaylist}>X</button>
-            </li>
+            <div>
+                <li onClick={() => this.getPlaylistMusics()}> {this.props.playlist.name} </li><label>Apagar Playlist: </label><button onClick={this.delPlaylist}>X</button>
+                <ul>
+                {this.state.detailPlaylist.map(detail =>(
+                    <li> {detail.artist} - {detail.name}</li> 
+                ))}
+                </ul>
+            </div>
         )
     }
 }
