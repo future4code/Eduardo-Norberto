@@ -10,6 +10,8 @@ import {
   UserName,
   UserBio,
 } from './styled'
+import { connect } from 'react-redux'
+import { updateCurrentPage } from '../../actions/route'
 
 class UserSwipeCard extends Component {
   constructor(props) {
@@ -21,24 +23,29 @@ class UserSwipeCard extends Component {
 
 
   render() {
-    const { userToSwipe, animationDirection: animation } = this.props
+    const { userToSwipe, animationDirection: animation, goToProfileScreen } = this.props
 
     return (
-      <UserCardWrapper animation={animation}>
+      <UserCardWrapper animation={animation} >
         <BlurredBackground photo={userToSwipe.photo}/>
-        <ProfilePicture src={userToSwipe.photo}/>
+        <ProfilePicture src={userToSwipe.photo} onClick={goToProfileScreen}/>
         <InfoWrapper>
           <TitleWrapper>
             <UserName>{userToSwipe.name},</UserName>
             <UserAge>{userToSwipe.age}</UserAge>
           </TitleWrapper>
-          <UserBio>{userToSwipe.bio}</UserBio>
         </InfoWrapper>
       </UserCardWrapper>)
   }
 }
 
-export default UserSwipeCard
+const mapDispatchToProps = dispatch => ({
+  goToProfileScreen: () => dispatch(updateCurrentPage('ProfileScreen')),
+})
+
+
+
+export default connect(null, mapDispatchToProps) (UserSwipeCard)
 
 UserSwipeCard.propTypes = {
   userToSwipe: PropTypes.object

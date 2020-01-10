@@ -58,7 +58,7 @@ export const ProfilePicture = styled.img`
 export const InfoWrapper = styled.div`
 	height: 30%;
 	position: absolute;
-  bottom: 0;
+  	bottom: 0;
 	width: 100%;
 	background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
 	color: white;
@@ -84,5 +84,6 @@ export const UserAge = styled.div`
 	font-size: 20px;
 `
 export const UserBio = styled.div `
-	font-size: 15px;
+	font-size: 17px;
+	padding: 10px;
 `;

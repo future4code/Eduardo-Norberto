@@ -15,7 +15,7 @@ class MatchScreen extends Component {
 	}
 
 	render() {
-		const {goToSwipeScreen, matches} = this.props
+		const {goToSwipeScreen, matches, goToProfileScreen} = this.props
 
 		return (
 			<div>

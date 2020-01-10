@@ -88,6 +88,7 @@ const mapDispatchToProps = (dispatch) => {
 		goToMatchScreen: () => dispatch(updateCurrentPage('MatchScreen')),
 		getProfileToSwipe: () => dispatch(fetchProfileToSwipe()),
 		chooseProfile: (id, choice) => dispatch(handleChoosePerson(id, choice)),
+		
 	}
 }
 
