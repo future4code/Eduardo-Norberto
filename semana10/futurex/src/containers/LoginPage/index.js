@@ -5,6 +5,8 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { routes } from "../Router"
+import Router from "../Router";
+
 
 const LoginWrapper = styled.form`
   width: 100%;
@@ -56,7 +58,7 @@ class LoginPage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-
+  goToHome: ()=> dispatch(push(routes.home))
 })
 
 export default connect(null, mapDispatchToProps) (LoginPage);
