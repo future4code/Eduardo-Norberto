@@ -6,6 +6,8 @@ import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { routes } from "../Router";
 import Router from "../Router";
+import DenseAppBar from '../DenseAppBar'
+
 
 class CreateTripsPage extends Component {
   constructor(props) {
@@ -19,12 +21,8 @@ class CreateTripsPage extends Component {
   const { goToLogin, goToForm, goToCreate, goToList } = this.props
     return (
      <div>
-       <ul>
-          <li onClick={this.props.goToHome}>Home</li>
-          <li onClick={this.props.goToCreate}>Criar</li>
-          <li onClick={this.props.goToList}>Listar</li>
-          <li onClick={this.props.goToDetail}>Detalhar</li>
-        </ul>
+       <DenseAppBar />
+       
        <h1>Criar Lista de Viagiam</h1>
       </div>
     );

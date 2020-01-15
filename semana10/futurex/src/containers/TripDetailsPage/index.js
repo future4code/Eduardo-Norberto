@@ -4,9 +4,9 @@ import { push, goBack } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
-import { routes } from "../Router";
-import Router from "../Router";
 import { getAllTrips } from  "../../actions";
+import DenseAppBar from '../DenseAppBar'
+
 
 class TripDetailsPage extends Component {
   constructor(props) {
@@ -21,15 +21,11 @@ class TripDetailsPage extends Component {
   }
 
   render() {
-    const { goToLogin, goToForm, goToCreate, goToList, fecthTrips } = this.props
+    const { fecthTrips } = this.props
     return (
      <div>
-        <ul>
-          <li onClick={this.props.goToHome}>Home</li>
-          <li onClick={this.props.goToCreate}>Criar</li>
-          <li onClick={this.props.goToList}>Listar</li>
-          <li onClick={this.props.goToDetail}>Detalhar</li>
-        </ul>
+       <DenseAppBar />
+        
        <h1>Lista de Viagiam Detalhes</h1>
        {this.props.trips.map(trip =>(
          <div>
@@ -48,12 +44,6 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-        goToHome: () => dispatch(goBack("/")),
-        goToLogin: () => dispatch(push(routes.contract)),
-        goToForm: () => dispatch(push(routes.form)),
-        goToCreate: () => dispatch(push(routes.createTrips)),
-        goToList: () => dispatch(push(routes.listTrips)),
-        goToDetail: () => dispatch(push(routes.detailsTrips)),
         fecthTrips: () => dispatch(getAllTrips())
 
 })
