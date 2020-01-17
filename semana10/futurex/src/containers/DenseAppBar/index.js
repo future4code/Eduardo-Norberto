@@ -12,8 +12,8 @@ import Typography from '@material-ui/core/Typography';
 const styles = (theme) => ({
 
   popoverPaper: {
-    width: '30%',
-    height: '80%',
+    width: '25%',
+    height: '40%',
     maxHeight: 'unset',
     left: '5% !important',
   },

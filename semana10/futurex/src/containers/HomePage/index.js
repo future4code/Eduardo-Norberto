@@ -1,11 +1,20 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import DenseAppBar from "../DenseAppBar"
 import { connect } from "react-redux";
-import { push, replace, goBack } from "connected-react-router";
-import { routes } from "../Router"
+import { push, goBack } from "connected-react-router";
+import { routes } from "../Router";
+import FooterApp from "../FooterApp";
+import MediaCard from "../MediaCard"
+import Typography from '@material-ui/core/Typography';
+
+const MainSection = styled.section `
+    height: 400px;
+    padding-top: 150px;
+    text-align: center;
+    background-color: tomato;
+`;
 
 
 class HomePage extends Component {
@@ -17,15 +26,19 @@ class HomePage extends Component {
         }
     }
 
-
     render(){
         const { goToLogin, goToForm, goToHome } = this.props
         return(
             <div>
                 <DenseAppBar />
-                
-                <h2>Deseja fazer o login ou entrar no formulário de aplicação?</h2>
-                <Button onClick={this.props.goToLogin}>Login</Button> <Button onClick={this.props.goToForm}>Formulário</Button>
+                   <MediaCard />
+                        <MainSection>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Deseja fazer o login ou entrar no formulário de aplicação?
+                            </Typography>
+                            <Button onClick={this.props.goToLogin}>Login</Button> <Button onClick={this.props.goToForm}>Formulário</Button>
+                        </MainSection>
+                <FooterApp />
             </div>
         )
     }

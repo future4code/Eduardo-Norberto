@@ -39,7 +39,7 @@ class ItemMenu extends React.Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        goToHome: () => dispatch(goBack("/")),
+        goToHome: () => dispatch(push(routes.home)),
         goToLogin: () => dispatch(push(routes.contract)),
         goToForm: () => dispatch(push(routes.form)),
         goToCreate: () => dispatch(push(routes.createTrips)),
