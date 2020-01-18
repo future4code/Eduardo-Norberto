@@ -21,10 +21,6 @@ class ItemMenu extends React.Component {
                 </MenuItem>
 
                 <MenuItem>
-                    <ListItemText onClick={this.props.goToCreate} primary="Criar" />
-                </MenuItem>
-
-                <MenuItem>
                     <ListItemText onClick={this.props.goToList} primary="Listar" />
                 </MenuItem>
 

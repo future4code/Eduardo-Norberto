@@ -36,7 +36,7 @@ class HomePage extends Component {
                             <Typography gutterBottom variant="h5" component="h2">
                                 Deseja fazer o login ou entrar no formulário de aplicação?
                             </Typography>
-                            <Button onClick={this.props.goToLogin}>Login</Button> <Button onClick={this.props.goToForm}>Formulário</Button>
+                            <Button onClick={this.props.goToLogin} variant="contained" size="medium" color="inherit" type="submit">Login</Button> <Button onClick={this.props.goToForm} variant="contained" size="medium" color="inherit" type="submit">Formulário</Button>
                         </MainSection>
                 <FooterApp />
             </div>
@@ -48,7 +48,8 @@ function mapDispatchToProps(dispatch) {
     return {
         goToHome: () => dispatch(goBack("/")),
         goToLogin: () => dispatch(push(routes.contract)),
-        goToForm: () => dispatch(push(routes.form))
+        goToForm: () => dispatch(push(routes.form)),
+        goToCreate: () => dispatch(push(routes.createTrips)),
     }
 }
 

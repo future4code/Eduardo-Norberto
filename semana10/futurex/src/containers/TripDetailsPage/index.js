@@ -6,6 +6,9 @@ import DenseAppBar from '../DenseAppBar'
 import FooterApp from '../FooterApp'
 import { Grid }  from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
+import Button from "@material-ui/core/Button";
+import { push } from "connected-react-router";
+import { routes } from "../Router"
 
 
 const Card = styled.section `
@@ -39,7 +42,7 @@ class TripDetailsPage extends Component {
 
   render() {
     
-    const { fecthTrips } = this.props
+    const { fecthTrips, goToForm } = this.props
 
     return (
      <div>
@@ -61,6 +64,7 @@ class TripDetailsPage extends Component {
                     <Typography component="h6" variant="h6"> 
                       {trip.description}
                     </Typography>
+                      <Button onClick={this.props.goToForm}>Inscreva-se</Button>
                   </Card>
                 ))}
               </Grid>
@@ -77,7 +81,8 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-        fecthTrips: () => dispatch(getAllTrips())
+  fecthTrips: () => dispatch(getAllTrips()),
+  goToForm: () => dispatch(push(routes.form)),
 
 })
 

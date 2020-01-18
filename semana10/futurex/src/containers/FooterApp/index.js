@@ -17,6 +17,7 @@ const FooterStyle = styled.footer `
     bottom: 0;
     padding: 10px;
     width: 100%;
+    background-color: #4787ff;
     
 `;
 

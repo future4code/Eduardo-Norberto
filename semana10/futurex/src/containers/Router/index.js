@@ -3,11 +3,12 @@ import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "../LoginPage";
 import HomePage from "../HomePage";
-import ApplicationForm from "../ApplicationForm"
-import CreateTripsPage from "../CreateTripsPage"
-import ListTripsPage from "../ListTripsPage"
-import TripDetailsPage from "../TripDetailsPage"
-
+import ApplicationForm from "../ApplicationForm";
+import CreateTripsPage from "../CreateTripsPage";
+import ListTripsPage from "../ListTripsPage";
+import TripDetailsPage from "../TripDetailsPage";
+import AdminPage from "../AdminPage";
+import TripAdmin from "../TripAdmin";
 
 
 export const routes = {
@@ -16,7 +17,9 @@ export const routes = {
   contract: "/login",
   createTrips: "/trips/create",
   listTrips: "/trips/list",
-  detailsTrips: "/trips/details"
+  detailsTrips: "/trips/details",
+  admin:"/admin",
+  adminTrips:"/admin/details"
   // Outras rotas aqui
 };
 
@@ -30,6 +33,8 @@ function Router(props) {
         <Route exact path={routes.createTrips} component={CreateTripsPage}/>
         <Route exact path={routes.listTrips} component={ListTripsPage}/>
         <Route exact path={routes.detailsTrips} component={TripDetailsPage}/>
+        <Route exact path={routes.admin} component={AdminPage}/>
+        <Route exact path={routes.adminTrips} component={TripAdmin}/>
       </Switch>
     </ConnectedRouter>
   );

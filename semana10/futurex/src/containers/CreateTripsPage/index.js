@@ -3,27 +3,15 @@ import { connect } from "react-redux";
 import { push, goBack } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import styled from "styled-components";
 import { routes } from "../Router";
 import DenseAppBar from '../DenseAppBar';
 import FooterApp from '../FooterApp';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
-
-const DivForm = styled.div`
-  padding: 10px;
-`;
-
-const DivMain = styled.div `
-  padding-top: 50px;
-  padding: 20px;
-  text-align: center;
-`;
-
-const DivButton = styled.div`
-  padding: 10px
-`;
+import MenuItem from '@material-ui/core/MenuItem';
+import { createTrip } from "../../actions/"
+import { DivForm, DivMain} from "./style"
+import Select from '@material-ui/core/Select';
 
 const tripForm = [
   {
@@ -39,38 +27,56 @@ const tripForm = [
     label: "Data da viagem",
     value: "2020-01-16",
     min: "2020-01-16",
+    required: true,
   },
   {
     name: "description",
     type: "text",
     label: "Descrição da viagem",
-    pattern: "^[a-zA-Z 0-9_-]{29,200}$"
+    pattern: "^[a-zA-Z 0-9_-]{29,200}$",
+    required: true
   },
   {
     name: "durationInDays",
     type: "number",
     label: "Duração da viagem em dias",
-    min: "50",
+    minValue: 50,
+    required: true
   }
-]
+];
+
 
 class CreateTripsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {}
+      form: {},
+      planet: "",
     };
   }
 
-  hadleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({form: {...this.state.form, [name]: value }})
+  componentDidMount(){
+    const token = window.localStorage.getItem("token")
+    if(token === null){
+      // this.props.goToLogin();
+    }
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    console.log(this.state.form);
   };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({form: {...this.state.form, [name]: value }})
+  }
+
+
+  handleCreateTrip = (event) => {
+    event.preventDefault();
+    const { name, planet, date, description, durationInDays } = this.state.form;
+    this.props.createTrip(name, planet, date, description, durationInDays)
+}
 
   render() {
   const { goToLogin, goToForm, goToCreate, goToList } = this.props
@@ -85,30 +91,33 @@ class CreateTripsPage extends Component {
                 {tripForm.map(input => (
                   <DivForm key={input.name}>
                     <Typography component="h3" variant="h5" htmlFor={input.name}>{input.label}: </Typography>
-                      <TextField variant="outlined"
+                      <TextField variant="outlined" defaultValue="Small" size="small"
                         name={input.name}
                         type={input.type}
                         value={this.state.form[input.name] || ""}
                         required={input.required}
-                        onChange={this.hadleInputChange}
+                        onChange={this.handleInputChange}
                         pattern={input.pattern}
                       />
                   </DivForm>
                   ))}
-                    <DivButton>
-                      <select name="planetas" id="planetas">
-                        <option value="Terra" selected="selected">Terra</option>
-                        <option value="Mercúrio">Mercúrio</option>
-                        <option value="Vênus">Vênus</option>
-                        <option value="Marte">Marte</option>
-                        <option value="Júpiter">Júpiter</option>
-                        <option value="Saturno">Saturno</option>
-                        <option value="Urano">Urano</option>
-                        <option value="Netuno">Netuno</option>
-                      </select>
+                    <Typography component="h3" variant="h5">Planeta:</Typography>
+                      <Select 
+                        name="planet"
+                        onChange={this.handleInputChange}
+                        value={this.state.form.planet}>
+                            <MenuItem value="Terra" selected="selected">Terra</MenuItem>
+                            <MenuItem value="Mercúrio">Mercúrio</MenuItem>
+                            <MenuItem value="Vênus">Vênus</MenuItem>
+                            <MenuItem value="Marte">Marte</MenuItem>
+                            <MenuItem value="Júpiter">Júpiter</MenuItem>
+                            <MenuItem value="Saturno">Saturno</MenuItem>
+                            <MenuItem value="Urano">Urano</MenuItem>
+                            <MenuItem value="Netuno">Netuno</MenuItem>
+                      </Select>
                           <br/><br/>
-                      <Button variant="contained" size="medium" color="inherit" type="submit">Enviar</Button>
-                  </DivButton>
+                      <Button variant="contained" size="medium" color="inherit" type="submit" onClick={this.handleCreateTrip}>Enviar</Button>
+                  
               </form>
           </Grid >
         </DivMain>
@@ -124,7 +133,8 @@ const mapDispatchToProps = dispatch => ({
   goToForm: () => dispatch(push(routes.form)),
   goToCreate: () => dispatch(push(routes.createTrips)),
   goToList: () => dispatch(push(routes.listTrips)),
-  goToDetail: () => dispatch(push(routes.detailsTrips))
+  goToDetail: () => dispatch(push(routes.detailsTrips)),
+  createTrip: (name, planet, date, description, durationInDays) => dispatch(createTrip(name, planet, date, description, durationInDays))
 })
 
 export default connect(null, mapDispatchToProps) (CreateTripsPage);
