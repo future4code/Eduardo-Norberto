@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Input } from 'rsuite/es';
-import { Button, ButtonToolbar } from 'rsuite/es';
-import { Dropdown } from 'rsuite/es';
-import { Panel } from 'rsuite/es';
+import { Input } from 'rsuite';
+import { Button, ButtonToolbar } from 'rsuite';
+import { Dropdown } from 'rsuite';
+import { Panel } from 'rsuite';
 import { createTask } from "../../actions"
 
 

@@ -1,14 +1,8 @@
 import React from "react";
-import { List } from 'rsuite/es';
+import { List } from 'rsuite';
 import { connect } from "react-redux";
 import { getAllTasks } from "../../actions"
 
-const data=[
-    'Roses are red',
-    'Violets are blue',
-    'Sugar is sweet',
-    'And so are you',
-   ];
 
 class ListTask extends React.Component{
     constructor(props){
