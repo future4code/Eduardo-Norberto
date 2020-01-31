@@ -4,7 +4,7 @@ import InputTask from "../InputTask";
 import ListTask from "../ListTask";
 
 
-class Planner extends React.Component {
+export class Planner extends React.Component {
   render() {
     return (
       <div>

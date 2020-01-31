@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const baseUrl = 'https://us-central1-missao-newton.cloudfunctions.net/generic/planner-bouman-eduardo'
+export const baseUrl = 'https://us-central1-missao-newton.cloudfunctions.net/generic/planner-bouman-edu'
 
-const getTasks = (tasks) =>({
+export const getTasks = (tasks) =>({
     type: "GET_ALL_TASKS",
     payload: {
         tasks,

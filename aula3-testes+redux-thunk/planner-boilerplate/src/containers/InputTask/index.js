@@ -1,13 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Input } from 'rsuite';
-import { Button, ButtonToolbar } from 'rsuite';
-import { Dropdown } from 'rsuite';
-import { Panel } from 'rsuite';
-import { createTask } from "../../actions"
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { createTask } from "../../actions";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Grid from '@material-ui/core/Grid';
+import styled from "styled-components";
+
+const ContainerInput = styled.div `
+    padding: 20px;
+`;
+const DivButton = styled.div `
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex: auto;
+`;
 
 
-class InputTask extends React.Component {
+export class InputTask extends React.Component {
     constructor(props){
         super(props)
 
@@ -34,30 +47,53 @@ class InputTask extends React.Component {
 
     render(){
         return(
-            <Panel bordered>
-                <form onSubmit={this.handleInputTask} onChange={this.handleInputChange}>
-                    <Input  value={this.state.form.text} type="text" name="text" size="lg" placeholder="Digite uma tarefa" />
-                    <ButtonToolbar>
-                        <select  name="day" value={this.state.form.day} onChange={this.handleInputChange}>
-                            <option value="" selected="selected">Selecione o dia</option>
-                            <option value="Segunda">Segunda</option>
-                            <option value="Terça">Terça</option> 
-                            <option value="Quarta">Quarta</option> 
-                            <option value="Quinta">Quinta</option>
-                            <option value="Sexta">Sexta</option>
-                            <option value="Sabado">Sabado</option> 
-                            <option value="Domingo">Domingo</option> 
-                        </select>
-                        <Button appearance="primary" onClick={this.createTask}>Salvar</Button>
-                    </ButtonToolbar>
-                </form>
-                <hr />
-            </Panel>
+            <Grid
+                container
+                direction="column"
+                justify="space-between"
+                alignItems="center"
+            
+            
+                >
+                <ContainerInput>
+                        <Grid>
+                            <form onSubmit={this.handleInputTask} onChange={this.handleInputChange}>
+                            <TextField variant="outlined" size="small" value={this.state.form.text} type="text" name="text" size="lg" placeholder="Digite uma tarefa" />
+                        
+                        <Grid
+                            container
+                            direction="row"
+                            justify="space-evenly"
+                            alignItems="center"
+                            >
+                                <DivButton>
+                                    <Select  
+                                        name="day" 
+                                        value={this.state.form.day} 
+                                        onChange={this.handleInputChange}
+                                        variant="outlined"
+                                        autoWidth={true}
+                                            >
+                                            <MenuItem value="Segunda">Segunda</MenuItem>
+                                            <MenuItem value="Terça">Terça</MenuItem> 
+                                            <MenuItem value="Quarta">Quarta</MenuItem> 
+                                            <MenuItem value="Quinta">Quinta</MenuItem>
+                                            <MenuItem value="Sexta">Sexta</MenuItem>
+                                            <MenuItem value="Sabado">Sabado</MenuItem> 
+                                            <MenuItem value="Domingo">Domingo</MenuItem> 
+                                    </Select>
+                                    <Button variant="contained" color="primary" disableElevation onClick={this.createTask}>Salvar</Button>
+                                </DivButton>
+                        </Grid>
+                    </form>
+                    </Grid>
+                </ContainerInput>
+            </Grid>
         )
     }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
     createTask: (text, day) => dispatch(createTask(text, day))
 })
 
