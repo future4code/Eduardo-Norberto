@@ -1,0 +1,16 @@
+{
+  "name": "mycalculator",
+  "version": "1.0.0",
+  "description": "aplicação de calcular",
+  "main": "myCalculator.js",
+  "scripts": {
+    "start": "myCalculator.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "number",
+    "calculator"
+  ],
+  "author": "eduardo",
+  "license": "ISC"
+}

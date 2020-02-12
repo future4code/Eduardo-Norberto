@@ -1,0 +1,15 @@
+{
+  "name": "listtask",
+  "version": "1.0.0",
+  "description": "lista de tarefas",
+  "main": "listTask.js",
+  "scripts": {
+    "start": "listTask.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tarefa"
+  ],
+  "author": "eduardo",
+  "license": "ISC"
+}
