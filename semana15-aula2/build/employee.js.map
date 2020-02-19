@@ -1,0 +1,1 @@
+{"version":3,"file":"employee.js","sourceRoot":"","sources":["../src/employee.ts"],"names":[],"mappings":";;AAAA,MAAsB,QAAQ;IAK1B,YAAY,IAAY,EAAE,OAAe,EAAE,SAAiB;QACxD,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,OAAO,GAAG,OAAO,CAAC;QACvB,QAAQ,CAAC,SAAS,GAAG,SAAS,CAAC;IACnC,CAAC;CAIJ;AAbD,4BAaC"}
