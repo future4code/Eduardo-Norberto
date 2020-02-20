@@ -1,0 +1,3 @@
+As subclassses Industry, Residence e Commerce herdam da classe Place
+Place é uma classe abstrata
+Client é uma interface
