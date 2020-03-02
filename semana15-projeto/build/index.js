@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const student_1 = require("./student");
+const teacher_1 = require("./teacher");
+const WebMission_1 = require("./WebMission");
+const MobileMission_1 = require("./MobileMission");
+const newStudent = new student_1.Student("Eduardo", "edu@rdo.com", new Date("02/06/1993"), "Bouman");
+const newTeacher = new teacher_1.Teacher("AstroDev", "astr@dev.com", new Date("02/06/1993"), teacher_1.Specialty.JS);
+const webClass = new WebMission_1.WebMission(new Date("01/11/2019"), new Date("15/05/2020"), [], [], "Bouman");
+const mobileClass = new MobileMission_1.MobileMission(new Date("01/11/2019"), new Date("15/05/2020"), [], [], 1);
+console.log("**************************************************");
+console.log(newStudent);
+console.log("**************************************************");
+console.log(newTeacher);
+console.log("**************************************************");
+console.log(webClass);
+console.log("**************************************************");
+console.log(mobileClass);
+console.log("**************************************************");
+//# sourceMappingURL=index.js.map
