@@ -1,0 +1,106 @@
+SELECT 
+    first_name, last_name
+FROM
+    actors
+WHERE
+    last_name LIKE '%a%';
+
+
+SELECT 
+    first_name, last_name
+FROM
+    actors
+WHERE
+    first_name="Julia" or first_name="Dan";
+    
+    
+SELECT 
+    first_name, last_name
+FROM
+    actors
+WHERE
+    first_name = 'Angelina'
+        OR first_name LIKE '%b%';
+        
+
+use `bouman-eduardo`;
+
+
+CREATE TABLE actors (
+    id INT PRIMARY KEY,
+    fist_name VARCHAR(25) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
+    age INT NOT NULL,
+    nationality VARCHAR(25)
+);
+
+alter table actors
+rename column fist_name to first_name;
+
+
+insert into actors (id, first_name, last_name, age, nationality)
+values (1, "Margot", "Robbie", 29, "Australian");
+
+describe actors;
+
+SELECT 
+    id, first_name, last_name, age, nationality
+FROM
+    actors;
+    
+use exercicios;
+
+describe films;
+
+select * from films;
+
+SELECT 
+    title, description
+FROM
+    films
+WHERE
+    length > 2;
+    
+SELECT 
+    description, release_year, rating
+FROM
+    films
+WHERE
+    description like '%Documentary%';
+    
+SELECT 
+    title, release_year, special_features
+FROM
+    films
+WHERE
+    title LIKE 'a%' AND rating = 'NC-17';
+    
+SELECT 
+    *
+FROM
+    films
+WHERE
+    rating LIKE 'PG-13' OR 'NC-17'
+        OR 'R' AND special_features = 'Trailers'
+        AND title LIKE '%d%';
+        
+use `bouman-eduardo`;
+
+CREATE TABLE films (
+    films_id INT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    description VARCHAR(150) NOT NULL,
+    realease_year INT NOT NULL,
+    length INT NOT NULL,
+    rating VARCHAR(10) NOT NULL,
+    special_features VARCHAR(20) NOT NULL
+);
+
+insert into films (films_id, title, description, realease_year, length, rating, special_features)
+values (1, "The Shawshank Redemption", "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", 1994, 2, "PG-13", "Trailers"),
+		(2, "The Godfather", "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", 1972, 3, "PG-13", "Trailers"),
+        (3, "The Godfather II", "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael,...", 1974, 3, "PG-13", "Trailers"),
+		(4, "The Dark Knight", "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one...", 2008, 2, "PG-13", "Trailers"),
+		(5, "12 Angry Men", "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.", 1957, 2, "PG-13", "Trailers");
+        
+select * from films;
