@@ -1,0 +1,184 @@
+use exercicios;
+
+describe city;
+/*****************************************************************************/
+/*1.1*/
+
+SELECT 
+    Name
+FROM
+    city
+ORDER BY Population DESC
+LIMIT 5;
+/*****************************************************************************/
+/*1.2*/
+
+select avg(Population) as `Media` from city;
+
+/*****************************************************************************/
+/*1.3*/
+SELECT 
+    COUNT(Name), District
+FROM
+    city
+GROUP BY District;
+/*****************************************************************************/
+/*1.4*/
+
+SELECT 
+    COUNT(Name), CountryCode
+FROM
+    city
+GROUP BY CountryCode
+ORDER BY COUNT(Name) DESC
+LIMIT 10;
+
+/*****************************************************************************/
+/*2*/
+
+describe country;
+
+select * from country limit 20;
+
+/*****************************************************************************/
+/*2.1*/
+
+SELECT 
+    Name, Population
+FROM
+    country
+WHERE
+    Population > 100000
+ORDER BY Population DESC
+LIMIT 100;
+
+/*****************************************************************************/
+/*2.2*/
+
+SELECT 
+    COUNT(Name) AS `Qtd de países com 5Mi`
+FROM
+    country
+WHERE
+    Population > 5000000;
+
+/*****************************************************************************/
+/*2.3*/
+
+SELECT 
+    SUM(Population) AS `Soma da População da Asia`, Continent
+FROM
+    country
+WHERE
+    Continent = 'Asia'
+GROUP BY Continent;
+
+/*****************************************************************************/
+/*2.4*/
+
+SELECT 
+    COUNT(GovernmentForm) AS 'Qtd formas de governo', GovernmentForm
+FROM
+    country
+WHERE
+    GovernmentForm LIKE '%Republic%'
+        OR GovernmentForm LIKE '%Monarchy%'
+GROUP BY GovernmentForm;
+
+/*****************************************************************************/
+/*2.5*/
+
+SELECT 
+    COUNT(GovernmentForm) AS 'Quantidade',
+    GovernmentForm AS 'Principal forma de governo'
+FROM
+    country
+GROUP BY GovernmentForm
+ORDER BY COUNT(GovernmentForm) DESC
+LIMIT 1;
+
+/*****************************************************************************/
+/*2.6*/
+
+SELECT 
+    AVG(Population) AS 'Total de População', Continent
+FROM
+    country
+GROUP BY Continent;
+
+/*****************************************************************************/
+/*2.7*/
+
+SELECT 
+    Name, IndepYear
+FROM
+    country
+ORDER BY IndepYear DESC
+LIMIT 10;
+
+/*****************************************************************************/
+/*2.8*/
+
+SELECT 
+    AVG(LifeExpectancy) AS `Expectativa de vida`,
+    LOWER(Continent) AS `Por Continente`
+FROM
+    country
+GROUP BY Continent;
+
+/*****************************************************************************/
+/*2.9*/
+
+SELECT 
+    Continent, SurfaceArea
+FROM
+    country
+ORDER BY SurfaceArea DESC
+LIMIT 3;
+
+/*****************************************************************************/
+/*3.0*/
+
+use `bouman-eduardo`;
+
+describe films;
+
+insert into films (films_id, title, description, realease_year, length, rating, special_features)
+values (6, "Schindler's List", "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his ...", 1993, 3, "PG-13", "Trailers"),
+		(7, "The Lord of the Rings: The Return of the King", "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze ...", 2003, 3, "PG-13", "Trailers"),
+        (8, "Pulp Fiction", "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four...", 1994, 3, "PG-13", "Trailers"),
+		(9, "Il buono, il brutto, il cattivo", "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find...", 1966, 2, "PG-13", "Trailers"),
+		(10, "The Lord of the Rings: The Fellowship of the Ring", "A meek Hobbit from the Shire and eight companions set out on a journey to...", 2001, 2, "PG-13", "Trailers");
+        
+select * from films;
+
+/*****************************************************************************/
+/*3.1*/
+
+alter table films
+add watched bool default false;
+
+/*****************************************************************************/
+/*3.2*/
+
+UPDATE films 
+SET 
+    watched = TRUE
+WHERE
+    rating LIKE '%PG-13%';
+    
+/*****************************************************************************/
+/*3.3*/
+
+alter table films
+add lucky_number int default 0;
+
+/*****************************************************************************/
+/*3.4*/
+
+UPDATE films 
+SET 
+    lucky_number = FLOOR(RAND() * (100 - 5 + 1) + 5);
+    
+/*****************************************************************************/
+select * from films;
