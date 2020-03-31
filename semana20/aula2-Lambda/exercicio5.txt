@@ -1,0 +1,39 @@
+exports.handler = async event => {
+    if (!event.character || !event.character.info) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Missing input" })
+        };
+    }
+    const character = {
+        name: event.character.info.name,
+        cartoon: event.character.info.cartoon,
+        urlPhoto: event.character.info.urlPhoto
+    };
+
+    if (!character.name) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Missing name" })
+        };
+    }
+    if (!character.cartoon) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Missing Cartoon" })
+        };
+    }
+    if (!character.urlPhoto) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Missing url of photo" })
+        };
+    }
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            message: "Character is exists"
+        })
+    };
+};

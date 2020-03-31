@@ -1,0 +1,10 @@
+exports.handler = async (event) =>{
+	const numeros = {
+		num1: event.numeros.num1,
+		num2: event.numeros.num2
+	}
+	return {
+		statusCode: 200,
+		body: JSON.stringify("A soma dos numeros é ", num1 + num2)
+	};
+}
