@@ -1,0 +1,41 @@
+Exercício 1
+
+1. Subir o projeto que está no Github para a maquina do EC2, no momento em que
+na aula usamos o comando npx create-react-app, vamos usar git clone, para 
+fazer um copia do nosso projeto para a maquina do EC2.
+
+2. 4 food
+
+3. Botão direito do mouse na pasta que contém a chave de acesso da maquina do EC2,
+clique Git bash here. Comandos: chmod 400 ec2-eduardo-mendes.pem; 
+ssh -i ec2-eduardo-mendes.pem ubuntu@54.167.202.146.
+
+4.
+git clone https://github.com/future4code/bouman-4food-A.git
+cd bouman-4food-A/
+npm i
+npm run start
+
+5.  Porta configurada para acesso.
+
+6. 
+sudo apt install python
+cd bouman-4food-A/
+npm run build
+cd build/
+sudo python -mSimpleHTTPServer 80
+
+7. Os dois procedimentos são semelhantes, exceto que quando estamos subindo um novo
+projeto usamos o npx create-react-app e quando estamos subindo um projeto já existente
+usamos git clone + url do projeto.
+
+Exercício 2
+
+1. Tuturial lido
+
+2. Feito
+
+3. Feito
+
+4. A única dificuldade foi que que para executar o comando "sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf"
+tinha que sair do mysql, do resto foi só seguir o tutorial.
