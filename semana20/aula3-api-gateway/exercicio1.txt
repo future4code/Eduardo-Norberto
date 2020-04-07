@@ -1,0 +1,69 @@
+Exercicio 1
+
+Tarefa 1
+
+Feito
+
+Tarefa 2
+
+1.
+entrada = body: "xpto" query:""/ saída: "Missing input!"
+entrada = body: "xpto" query: "key"/ saída: 200
+entrada = body: "" query: "key" / saída: "Missing input!"
+
+2.
+Esse método analisa uma string, transformando em um valor ou objeto que é 
+reconhecido pelo JavaScript.
+
+3.
+Quando hasBody e hasQueries tiverem valores válidos.
+
+4.
+Quando não passamos valores para o body e também para query, ele retorna 400 
+com a mensagem "Missing Input!".
+
+
+5.
+Teste feito
+
+
+Tarefa 3
+
+const execute = (cep, apiKey) => {
+    if (!apiKey || !cep) {
+        throw new Error("Está faltando informação");
+    }
+    
+    if (apiKey !== "key") {
+        throw new Error("Chave de API inválida");
+    }
+    
+    const regex = new RegExp(
+    "^\d{5}-\d{3}$"
+  );
+  
+  return regex.test(cep);
+};
+
+exports.handler = async event => {
+    try{
+        const body = JSON.parse(event.body)
+        const cep = body.cep
+        const apikey = event.headers.apikey
+        const result = execute(cep, apikey)
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+            message: result ? "Esse cpf é válido" : "Esse cpf não é valido"
+        })
+    }; 
+    } catch(err){
+        return{
+            statusCode: 400,
+            body: JSON.stringify({
+                errorMessage: err.message
+            })
+        }
+    }
+};
+
