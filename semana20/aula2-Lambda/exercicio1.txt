@@ -1,0 +1,26 @@
+Exercício 1
+
+a. Entendi o código.
+
+b. /statusCode: 400/body: message: "Missing input"/
+
+c. /statusCode: 400/body: message: "Missing name"/
+
+d. /statusCode: 400/body: message: "Missing email"/
+
+e. /statusCode: 400/body: message: "Invalid password"/
+
+f. /statusCode: 200/body: message: "User is correct"/
+
+g. No if que realiza a verificação de se foi digitado password ou se
+o password tiver mais de 5 caracteres. Substituir o 400 por 422.
+
+h. {
+		"name": "Astrodev",
+		"email": "astrodev@f4.com.br",
+		"password": "123456"
+	}
+	
+
+Exercício 2
+
